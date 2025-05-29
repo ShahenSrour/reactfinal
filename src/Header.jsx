@@ -1,5 +1,3 @@
-import "./App.css";
-
 function Header() {
   return (
     <>
@@ -18,7 +16,7 @@ function Header() {
             <input
               id="search"
               type="text"
-              onChange="OnSearchChange(event)"
+              onChange={() => OnSearchChange()}
               placeholder="category"
             />
             <button className="Submit">

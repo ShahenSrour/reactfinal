@@ -1,68 +1,233 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  font-weight: 600;
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  text-decoration: none;
+  color: black;
 }
 
 body {
-  margin: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+nav {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+footer {}
+
+.nav__left,
+.nav__right {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 25%;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+.nav__title {
+  margin: 0;
+  font-size: 26px;
+}
+
+figure {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+.nav__logo {
+  height: 40px;
+}
+
+section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#search {
+  position: relative;
+  margin-left: 20px;
+  padding: 10px 20px;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 50px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.white {
+  color: aliceblue;
+}
+
+#results {
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  height: 200px;
+  width: 30%;
+  border-style: solid;
+  border-radius: 30px;
+  border-width: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px;
+  margin: 20px 0px;
+}
+
+.Submit {
+  color: antiquewhite;
+  background-color: black;
+  position: absolute;
+  right: 0px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 30px;
+  border-width: 1px;
+  padding: 10px 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.Submit:hover {
+  background-color: aliceblue;
+  color: black;
+}
+
+.Submit:hover .white {
+  color: black;
+}
+
+.emoji {
+  align-self: center;
+  font-size: 30px;
+  transition: all 0.2s ease-in-out;
+
+}
+
+.emoji:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.video {
+  height: 100px;
+  width: 100px;
+  background-image: url("assets/1223.mp4");
+}
+
+header,
+footer {
+  background-color: #ffffb7;
+}
+
+.landing-page {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.landing-page-main {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.landing-page-notmain {
+  height: 20%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.yellow {
+  color: #ffd400;
+}
+
+p {
+  font-weight: 600;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-weight: 900;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.landing-page__title {
+  font-size: 48px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.landing-page__subtitle {
+  font-size: 28px;
+}
+
+.heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
   }
-  a:hover {
-    color: #747bff;
+
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
   }
-  button {
-    background-color: #f9f9f9;
+
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
   }
+
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+
+.color1 {
+  background-color: #fff192;
+}
+
+.color2 {
+  background-color: #ffd400;
 }
