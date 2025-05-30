@@ -1,3 +1,4 @@
+import book from './assets/download.gif';
 function Header() {
   return (
     <>
@@ -5,7 +6,7 @@ function Header() {
         <nav>
           <div className="nav__left">
             <figure>
-              <img className="nav__logo" src="assets/download.gif" alt="" />
+              <img className="nav__logo" src={book} alt="" />
             </figure>
             <h1>Java Search</h1>
           </div>

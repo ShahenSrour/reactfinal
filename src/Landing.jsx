@@ -1,3 +1,4 @@
+import emoji from './assets/emoji.gif';
 function Landing() {
   return (
     <>
@@ -5,7 +6,7 @@ function Landing() {
         <div className="landing-page-main">
           <img
             className="landing-page__left"
-            src="assets/AstrosAngrySticker-AstrosAngryEmoji-Discover&ShareGIFs.gif"
+            src={emoji}
             alt=""
           />
           <div className="landing-page__right">
