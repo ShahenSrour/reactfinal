@@ -23,13 +23,18 @@ function Results() {
   }
   return (
     <>
+    <section id="results">
       {data.map((emoji) => (
         <section key={emoji.name} className="card">
-          <h1 className="emoji">{emoji.htmlCode}</h1>
+          <h1
+            className="emoji"
+            dangerouslySetInnerHTML={{ __html: emoji.htmlCode }}
+          />
           <p>emoji name : {emoji.name}</p>
           <p>emoji category : {emoji.category}</p>
         </section>
       ))}
+      </section>
     </>
   );
 }
