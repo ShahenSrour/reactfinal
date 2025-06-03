@@ -1,13 +1,21 @@
+import React, { useState } from "react";
 import book from "./assets/download.gif";
 import Results from "./Results.jsx";
+
 function Header() {
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const handleSearchChange = (value) => {
+    setSelectedCategory(value);
+  };
+
   return (
     <>
       <header>
         <nav>
           <div className="nav__left">
             <figure>
-              <img className="nav__logo" src={book} alt="" />
+              <img className="nav__logo" src={book} alt="Logo" />
             </figure>
             <h1>Java Search</h1>
           </div>
@@ -17,13 +25,13 @@ function Header() {
             </label>
             <select
               id="search"
-              onChange={(e) => OnSearchChange(e.target.value)} // Pass selected value
+              onChange={(e) => handleSearchChange(e.target.value)}
             >
+              <option value="">Select a Category</option>
               <option value="smileys-and-people">Smileys</option>
               <option value="animals-and-nature">Animals</option>
               <option value="food-and-drink">Food</option>
-              <option value="food-and-drink">Food</option>
-              <option value="travel-and-place">Travel</option>
+              <option value="travel-and-places">Travel</option>
               <option value="activities">Activities</option>
               <option value="objects">Objects</option>
               <option value="symbols">Symbols</option>
@@ -37,27 +45,10 @@ function Header() {
           </div>
         </nav>
       </header>
+
+      {selectedCategory ? <Results cat={selectedCategory} /> : null}
     </>
   );
-  function OnSearchChange(event) {
-    let cat = event;
-    if (
-      cat == "smileys-and-people" ||
-      cat == "animals-and-nature" ||
-      cat == "food-and-drink" ||
-      cat == "travel-and-place" ||
-      cat == "activities" ||
-      cat == "objects" ||
-      cat == "symbols" ||
-      cat == "flags"
-    ) {
-      return <Results category={cat} />;
-    } else {
-      console.log("error, no valid search results");
-      alert("error, no valid search results");
-      return null;
-    }
-  }
 }
 
 export default Header;
